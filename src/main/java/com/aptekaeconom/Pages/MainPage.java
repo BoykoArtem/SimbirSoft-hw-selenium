@@ -109,6 +109,7 @@ public class MainPage extends BasePage {
 
     @Step("Проверка текста и цвета выделенной подкатегории Лечебная Косметика в дропдаун меню")
     public boolean getCheckDropDownMenuSelectedSubCategoryTextAndColor() {
+        takeScreenShot(getDriver());
         return (healingCosmetics.getText().equals(EXPECTED_HEALING_COSMETICS_SUBCATEGORY_NAME))
                 && (healingCosmetics.getCssValue("color").equals(SELECTED_TOP_MENU_CATEGORY_COLOR));
     }

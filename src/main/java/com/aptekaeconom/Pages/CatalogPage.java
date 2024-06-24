@@ -37,7 +37,7 @@ public class CatalogPage extends BasePage {
         takeScreenShot(getDriver());
         return stringList;
     }
-    @Step("Проверка наличия хлебных крошек")
+    @Step("Проверка корректности хлебных крошек")
     public List<String> getBreadCrumbs() {
         return listBreadCrumbs(breadCrumbs);
     }
@@ -45,11 +45,6 @@ public class CatalogPage extends BasePage {
     public boolean getItemCard() {
         takeScreenShot(getDriver());
         return itemCard.isDisplayed();
-    }
-    @Step("Проверка что категория Косметика в сайд-меню выделена")
-    public boolean getSelectedSideMenuCategoryDisplayed() {
-        takeScreenShot(getDriver());
-        return selectedSideMenuCosmeticsCategory.isDisplayed();
     }
     @Step("Проверка текста и цвета выделенной категории Косметики в сайд-меню")
     public boolean getCheckSelectedSideMenuCategoryTextAndColor() {
@@ -59,6 +54,7 @@ public class CatalogPage extends BasePage {
     }
     @Step("Проверка перехода в подкатегорию Лечебная Косметика")
     public boolean getCheckCurrentPageTitle() {
+        takeScreenShot(getDriver());
         return getDriver().getTitle().equals(EXPECTED_HEALING_COSMETICS_TITLE);
     }
     @Step("Ховер по каталогу Косметика в сайд-меню")
